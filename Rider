@@ -1,0 +1,36 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tugasprimaryrider;
+
+/**
+ *
+ * @author Ryan Nawavie
+ */
+public class Rider {
+String name;
+    double overtakesSpeed, overtakesDefend;
+
+    Rider(String nameInput, double overtakesspeedinput, double overtakesdefendinput){
+        name = nameInput;
+        overtakesSpeed = overtakesspeedinput;
+        overtakesDefend = overtakesdefendinput;
+    }
+
+    void Overtakes(Rider rivals){
+        System.out.println("\n" + name + " Overtakes " + rivals.name);
+        rivals.successfulOvertakes(overtakesSpeed);
+    }
+
+    void successfulOvertakes(double successfulOvertakes){
+        System.out.println(name + " Overtaken By : " + successfulOvertakes);
+        overtakesDefend = overtakesDefend - successfulOvertakes;
+    }
+
+    void Output(){
+        System.out.println("\nName: " + name);
+        System.out.println("Overtakes Defend: " + overtakesDefend);
+        System.out.println("Overtakes Speed: " + overtakesSpeed);
+    }
+}
