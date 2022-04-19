@@ -1,0 +1,44 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package tugasprimaryrider;
+
+/**
+ *
+ * @author Ryan Nawavie
+ */
+public class TugasPrimaryrider {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Rider rider1 = new Rider("Marc Marquez",92,87);
+	RiderAgility rider2 = new RiderAgility("Mick Doohan", 95, 91);
+        //polymorphism
+        Rider rider3 = new RiderStrength("Valentino Rossi", 99,93);
+       
+        
+        Rider[] RiderList = new Rider[3];
+        RiderList[0] = rider1;
+        RiderList[1] = rider2;
+        RiderList[2] = rider3;    
+        
+        System.out.print("\n" + "RIDER CHOICES :");    
+        RiderList[0].Output();
+	    RiderList[1].Output();
+	    RiderList[2].Output();
+        
+        System.out.print("\n" + "Overtakes :"); 
+        rider3.Overtakes(rider2);   
+        rider3.Overtakes(rider1);   
+        rider2.Overtakes(rider1);
+       
+        
+        System.out.print("\n" + "Riders Position After Overtakes :");
+        RiderList[0].Output();
+        RiderList[1].Output();
+        RiderList[2].Output();
+    }
+}
