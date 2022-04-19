@@ -1,0 +1,35 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tugasprimaryrider;
+
+/**
+ *
+ * @author Ryan Nawavie
+ */
+public class RiderStrength extends Rider{
+String type = "StrengthType";
+    
+    RiderStrength(String nameInput, double overtakesspeedinput, double overtakesdefendinput){
+	super(nameInput, overtakesspeedinput, overtakesdefendinput);
+    }
+    
+   @Override
+    void Output(){
+        super.Output();
+        System.out.println("Type : " + type);
+    }
+        
+    @Override
+    void Overtakes(Rider rivals){
+        System.out.println("\n" + name + " Overtakes " + rivals.name);
+        rivals.successfulOvertakes(overtakesSpeed*2);
+    }
+        
+    @Override
+    void successfulOvertakes(double successfulOvertakes){
+        System.out.println(name + " Overtaken By : " + successfulOvertakes);
+         overtakesDefend = overtakesDefend - successfulOvertakes;   
+    }
+}
